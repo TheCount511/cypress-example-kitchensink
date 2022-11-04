@@ -5,26 +5,26 @@ context('My First Test', () => {
         cy.visit('/commands/actions/')
     })
 
-    // it('triggers a popover on click', () => {
-    //     cy.get('.action-btn').click()
-    //     cy.findByText('This popover shows up on click').should('be.visible')
-    // })
+    it('triggers a popover on click', () => {
+        cy.get('.action-btn').click()
+        cy.findByText('This popover shows up on click').should('be.visible')
+    })
 
-    // it('can click on different sections of a canvas', () => {
-    //     cy.get('#action-canvas').click('top')
-    //     cy.get('#action-canvas').click('bottomRight')
-    //     cy.get('#action-canvas').click(80, 100)
-    // })
+    it('can click on different sections of a canvas', () => {
+        cy.get('#action-canvas').click('top')
+        cy.get('#action-canvas').click('bottomRight')
+        cy.get('#action-canvas').click(80, 100)
+    })
 
-    // it('can double click to edit', () => {
-    //     cy.get('.action-div').dblclick().should('not.be.visible')
-    //     cy.get('.action-input-hidden').should('be.visible')
-    // })
+    it('can double click to edit', () => {
+        cy.get('.action-div').dblclick().should('not.be.visible')
+        cy.get('.action-input-hidden').should('be.visible')
+    })
 
-    // it('can right click to edit', () => {
-    //     cy.get('.rightclick-action-div').rightclick().should('not.be.visible')
-    //     cy.get('.rightclick-action-input-hidden').should('be.visible')
-    // })
+    it('can right click to edit', () => {
+        cy.get('.rightclick-action-div').rightclick().should('not.be.visible')
+        cy.get('.rightclick-action-input-hidden').should('be.visible')
+    })
 
     it('shows the nav links to hover', () => {
         cy.get('.dropdown-toggle').trigger('mouseover')
@@ -138,36 +138,36 @@ context('My First Test', () => {
     //     })
     // })
 
-    // it('shows an active class for the current page', () => {
-    //     cy.visit('/commands/actions')
-    //     cy.get('.dropdown-menu').find('li').eq(2).should('have.class', 'active')
-    // })
+    it('shows an active class for the current page', () => {
+        cy.visit('/commands/actions')
+        cy.get('.dropdown-menu').find('li').eq(2).should('have.class', 'active')
+    })
 
-    // it('should not have an active class on inactive pages', () => {
-    //     cy.visit('/commands/actions')
-    //     cy.get('.dropdown-menu').find('li').first().should('not.have.class', 'active')
-    //         .find('a').should('have.attr', 'href', '/commands/querying')
-    // })
+    it('should not have an active class on inactive pages', () => {
+        cy.visit('/commands/actions')
+        cy.get('.dropdown-menu').find('li').first().should('not.have.class', 'active')
+            .find('a').should('have.attr', 'href', '/commands/querying')
+    })
 
-    // it('links to the actions page correctly', () => {
-    //     cy.visit('/')
-    //     cy.findAllByText('Actions').first().click({ force: true })
-    //     cy.url().should('include', 'commands/actions')
-    // })
+    it('links to the actions page correctly', () => {
+        cy.visit('/')
+        cy.findAllByText('Actions').first().click({ force: true })
+        cy.url().should('include', 'commands/actions')
+    })
 
-    // it('lets you type in an input field', () => {
-    //     cy.visit('/commands/actions')
-    //     cy.findAllByPlaceholderText('Email').type('test').should('have.value', 'test')
-    // })
+    it('lets you type in an input field', () => {
+        cy.visit('/commands/actions')
+        cy.findAllByPlaceholderText('Email').type('test').should('have.value', 'test')
+    })
 
-    // it('lets you clear an input field', () => {
-    //     cy.visit('/commands/actions')
-    //     cy.findAllByLabelText('Describe:').type('Test description').should('have.value', 'Test description')
-    //         .clear().should('have.value', '')
-    // })
+    it('lets you clear an input field', () => {
+        cy.visit('/commands/actions')
+        cy.findAllByLabelText('Describe:').type('Test description').should('have.value', 'Test description')
+            .clear().should('have.value', '')
+    })
 
-    // it('lets you check a checkbox', () => {
-    //     cy.visit('/commands/actions')
-    //     cy.get('.action-checkboxes [type="checkbox"]').eq(1).check({ force: true }).should('be.checked')
-    // })
+    it('lets you check a checkbox', () => {
+        cy.visit('/commands/actions')
+        cy.get('.action-checkboxes [type="checkbox"]').eq(1).check({ force: true }).should('be.checked')
+    })
 })
