@@ -8,9 +8,12 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-
+      - name: Cypress install
+        run: npm install --legacy-peer-deps
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
+          install: false
           build: npm run build
           start: npm start
+          run: npm run de
