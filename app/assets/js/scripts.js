@@ -18,7 +18,7 @@ $(() => {
     draw(e)
   })
 
-  function draw (e) {
+  function draw(e) {
     let pos = getMousePos(canvas, e)
     let posx = pos.x
     let posy = pos.y
@@ -29,7 +29,7 @@ $(() => {
     context.fill()
   }
 
-  function getMousePos (canvas, evt) {
+  function getMousePos(canvas, evt) {
     let rect = canvas.getBoundingClientRect()
 
     return {
@@ -44,6 +44,11 @@ $(() => {
     $('.action-input-hidden').removeClass('hidden').focus()
     $(e.currentTarget).addClass('hidden')
   })
+
+  $('.dropdown-toggle').hover(() => {
+    $('li.active').addClass('open')
+  })
+
 
   // listen to contextmenu to demonstrate logic on right click command
   $('.rightclick-action-div').on('contextmenu', (e) => {
@@ -68,8 +73,8 @@ $(() => {
     e.preventDefault()
 
     $('<p>Your form has been submitted!</p>')
-    .insertAfter(e.currentTarget)
-    .css('color', '#20B520')
+      .insertAfter(e.currentTarget)
+      .css('color', '#20B520')
   })
 
   // hide this div so we can invoke show later
@@ -120,7 +125,7 @@ $(() => {
   // we fetch all data from this REST json backend
   const root = 'https://jsonplaceholder.cypress.io'
 
-  function getComment () {
+  function getComment() {
     $.ajax({
       url: `${root}/comments/1`,
       method: 'GET',
@@ -129,7 +134,7 @@ $(() => {
     })
   }
 
-  function postComment () {
+  function postComment() {
     $.ajax({
       url: `${root}/comments`,
       method: 'POST',
@@ -143,7 +148,7 @@ $(() => {
     })
   }
 
-  function putComment () {
+  function putComment() {
     $.ajax({
       url: `${root}/comments/1`,
       method: 'PUT',
@@ -153,7 +158,7 @@ $(() => {
         body: 'You can change the method used for cy.intercept() to be GET, POST, PUT, PATCH, or DELETE',
       },
       statusCode: {
-        404 (data) {
+        404(data) {
           $('.network-put-comment').text(data.responseJSON.error)
         },
       },
@@ -167,7 +172,7 @@ $(() => {
   })
 
   // populate local storage to demonstrate cy.clearLocalStorage()
-  function populateStorage () {
+  function populateStorage() {
     localStorage.setItem('prop1', 'red')
     localStorage.setItem('prop2', 'blue')
     localStorage.setItem('prop3', 'magenta')
@@ -180,7 +185,7 @@ $(() => {
   })
 
   // populate local cookie to demonstrate cy.clearCookies()
-  function setCookies () {
+  function setCookies() {
     document.cookie = 'token=123ABC'
   }
 
